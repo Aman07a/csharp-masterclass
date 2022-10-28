@@ -5,22 +5,26 @@ namespace CSharp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static string LowUpper(string s)
         {
-            string friend1 = "Abe";
-            string friend2 = "Jody";
-            string friend3 = "Cory";
-
-            GreetFriend(friend1, friend2, friend3);
-
-            Console.Read();
+            return s.ToLower() + s.ToUpper();
         }
 
-        public static void GreetFriend(string friendName, string friendName2, string friendName3)
+        public static void Count(string s)
         {
-            Console.WriteLine("Hi " + friendName + ", my friend!");
-            Console.WriteLine("Hi " + friendName2 + ", my friend!");
-            Console.WriteLine("Hi " + friendName3 + ", my friend!");
+            Console.WriteLine("The amount of characters is {0}.", s.Length);
+        }
+
+        public static void Main(string[] args)
+        {
+            // We encourage you to test your code with different strings,
+            // but don't forget to put the default string back at the end of your testing.
+            string s = "hey there !";
+
+            /// Change nothing down here 
+            s = LowUpper(s);
+            Console.WriteLine(s);
+            Count(s);
         }
     }
 }
