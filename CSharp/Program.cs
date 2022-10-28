@@ -7,43 +7,67 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Please enter a number!");
-            string userInput = Console.ReadLine();
-
             int num1 = 5;
-            int num2 = 0;
+            int num2 = 3;
+            int num3;
+
+            // Unary operators
+            num3 = -num1;
+            Console.WriteLine("num3 is {0}", num3);
+
+            bool isSunny = true;
+            Console.WriteLine("is it sunny? {0}", !isSunny);
+
+            // Increment operators
+            int num = 0;
+            num++;
+            Console.WriteLine("num is {0}", num);
+            Console.WriteLine("num is {0}", num++);
+            // Pre increment
+            Console.WriteLine("num is {0}", ++num);
+
+            // Decrement opertor
+            num--;
+            Console.WriteLine("num is {0}", num);
+            Console.WriteLine("num is {0}", num--);
+            // Pre decrement
+            Console.WriteLine("num is {0}", --num);
+
             int result;
 
-            try
-            {
-                result = num1 / num2;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Can't devide by zero!");
-            }
+            result = num1 + num2;
+            Console.WriteLine("result of num1 + num2 is {0}", result);
+            result = num1 - num2;
+            Console.WriteLine("result of num1 - num2 is {0}", result);
+            result = num1 / num2;
+            Console.WriteLine("result of num1 / num2 is {0}", result);
+            result = num1 * num2;
+            Console.WriteLine("result of num1 * num2 is {0}", result);
+            result = num1 % num2;
+            Console.WriteLine("result of num1 % num2 is {0}", result);
 
-            try
-            {
-                int userInputAsInt = int.Parse(userInput);
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Format exception, please enter the correct type next time.");
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("General exception, the number was too long or too short for an int32");
-            }
-            catch (ArgumentNullException)
-            {
-                Console.WriteLine("ArgumentNullException, the value was empty(null)");
-            }
-            finally
-            {
-                Console.WriteLine("This is called anyways!");
-            }
+            // Relational and type operators
+            bool isLower;
+            isLower = num1 < num2;
+            Console.WriteLine("result of num1 < num2 is {0}", isLower);
 
+            // Equality operator
+            bool isEqual;
+            isEqual = num1 == num2;
+            Console.WriteLine("result of num1 == num2 is {0}", isEqual);
+
+            isEqual = num1 != num2;
+            Console.WriteLine("result of num1 != num2 is {0}", isEqual);
+
+            // Conditional operators
+            bool isLowerAndSunny;
+            // Condition1 AND condition2
+            isLowerAndSunny = isLower && isSunny;
+            Console.WriteLine("result of isLower && isSunny is {0}", isLowerAndSunny);
+
+            // Condition1 OR condition2
+            isLowerAndSunny = isLower || isSunny;
+            Console.WriteLine("result of isLower || isSunny is {0}", isLowerAndSunny);
             Console.ReadKey();
         }
     }
