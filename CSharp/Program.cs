@@ -2,17 +2,29 @@
 
 namespace CSharp
 {
-    internal class Program
+    // Class names like ClientActivity
+    class Program
     {
         // Starting point of our pogram
+        // Method name like CalculateValue
+        // Method arguments like firstNumber
         static void Main(string[] args)
         {
-            // Console.ForegroundColor = ConsoleColor.DarkYellow;
-            // Console.BackgroundColor = ConsoleColor.DarkGray;
-            // Console.Clear();
-            Console.WriteLine("Hello Admin");
-            Console.WriteLine("C# is cool");
-            Console.Read();
+            // Local variables like itemCount
+
+            // Use userControl instead of useCtr
+
+            // Don't use numbers at the start of variable names
+
+            // Correct
+            string myName;
+            int lastNum;
+            bool isSaved;
+
+            // Avoid
+            // String myName;
+            // Int32 lastNum;
+            // Boolean isSaved;
         }
 
         /* This program
