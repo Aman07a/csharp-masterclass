@@ -18,16 +18,16 @@ namespace CSharp
             Console.Read();
 
             // Example 1: Exercise: Parsing
-/*            string stringForFloat = "0.85"; // datatype should be float
-            string stringForInt = "12345"; // datatype should be int
-
-            float stringToFloat = float.Parse(stringForFloat);
-            int stringToInt = int.Parse(stringForInt);
-
-            Console.WriteLine("Float = {0}, Int = {1}", stringToFloat, stringToInt);
-            Console.WriteLine(stringToFloat);
-            Console.WriteLine(stringToInt);
-            Console.Read();*/
+            /* string stringForFloat = "0.85"; // datatype should be float
+             * string stringForInt = "12345"; // datatype should be int
+             * float stringToFloat = float.Parse(stringForFloat);
+             * int stringToInt = int.Parse(stringForInt);
+             * 
+             * Console.WriteLine("Float = {0}, Int = {1}", stringToFloat, stringToInt);
+             * Console.WriteLine(stringToFloat);
+             * Console.WriteLine(stringToInt);
+             * Console.Read();
+             * */
         }
     }
 }
