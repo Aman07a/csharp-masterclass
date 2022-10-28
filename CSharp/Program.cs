@@ -5,26 +5,25 @@ namespace CSharp
 {
     internal class Program
     {
-        public static string LowUpper(string s)
-        {
-            return s.ToLower() + s.ToUpper();
-        }
-
-        public static void Count(string s)
-        {
-            Console.WriteLine("The amount of characters is {0}.", s.Length);
-        }
-
         public static void Main(string[] args)
         {
-            // We encourage you to test your code with different strings,
-            // but don't forget to put the default string back at the end of your testing.
-            string s = "hey there !";
+            Calculate();
+            Console.Read();
+        }
 
-            /// Change nothing down here 
-            s = LowUpper(s);
-            Console.WriteLine(s);
-            Count(s);
+        public static void Calculate()
+        {
+            Console.WriteLine("Please enter the first number");
+            string number1Input = Console.ReadLine();
+            Console.WriteLine("Please enter the second number");
+            string number2Input = Console.ReadLine();
+
+            int num1 = int.Parse(number1Input);
+            int num2 = int.Parse(number2Input);
+
+            int result = num1 + num2;
+
+            Console.WriteLine(result);
         }
     }
 }
