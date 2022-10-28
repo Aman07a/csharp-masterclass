@@ -1,35 +1,34 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace CSharp
 {
-    // Class names like ClientActivity
-    class Program
+    internal class Program
     {
-        // Starting point of our pogram
-        // Method name like CalculateValue
-        // Method arguments like firstNumber
         static void Main(string[] args)
         {
-            // Local variables like itemCount
+            // Implicit conversion
+            int num = 12390532;
+            long bigNum = num;
 
-            // Use userControl instead of useCtr
+            float myFloat = 13.37F;
+            double myNewDouble = myFloat;
 
-            // Don't use numbers at the start of variable names
+            double myDouble = 13.37;
+            int myInt;
+            // Explicit conversion
+            // Cast double to int;
+            myInt = (int)myDouble;
 
-            // Correct
-            string myName;
-            int lastNum;
-            bool isSaved;
+            // typeConversion
+            string myString = myDouble.ToString(); // "13.37"
+            string myFloatString = myFloat.ToString();
+            bool sunIsShining = false;
 
-            // Avoid
-            // String myName;
-            // Int32 lastNum;
-            // Boolean isSaved;
+            string myBoolString = sunIsShining.ToString();
+
+            Console.WriteLine(myBoolString);
+            Console.Read();
         }
-
-        /* This program
-         * is made, in order to 
-         * teach how to create a csharp example 
-        **/
     }
 }
