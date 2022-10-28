@@ -7,37 +7,23 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            // Define few variables
-            int age = 22;
-            string name = "Admin";
-            string job = "Developer";
+            string myName;
 
-            // 1. String concatenation
-            Console.WriteLine("String concatenation");
-            Console.WriteLine("Hello my name is " + name + ", I am " + age + " years old.");
+            Console.Write("Please enter your name and press enter: ");
 
-            // 2. String formatting
-            // String formatting uses index
-            Console.WriteLine("String Formatting");
-            Console.WriteLine("Hello my name is {0}, I am {1} years old. I'm a {2}.", name, age, job);
+            myName = Console.ReadLine();
 
-            // 3. String interpolation
-            // String interpolation uses $ at the start
-            // which will allow us to write our variables like this {variableName}
-            Console.WriteLine("String Interpolation");
-            Console.WriteLine($"Hello my name is {name}, I am {age} years old.");
+            string myNameUpperCase = String.Format("Uppercase value: {0}", myName.ToUpper());
+            string myNameLowerCase = String.Format("Lowercase value: {0}", myName.ToLower());
+            string myNameTrimmed = String.Format("Trimmed value: {0}", myName.Trim());
+            string myNameSubString = String.Format("Substring value: {0}", myName.Substring(0, 5));
 
-            // 4. Verbatim strings
-            // Verbatim strings start with @ and tells the compiler to take the string literally
-            // and ignore any spaces and escape characters like \n
-            Console.WriteLine("Verbatim strings");
-            Console.WriteLine(@"Lorem ipsum dolor sit amet, " +
-            "consectetur adipiscing elit,\n" +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n" +
-            "Lacus laoreet non curabitur gravida arcu ac.\n" +
-            "Posuere lorem ipsum dolor sit amet consectetur adipiscing elit.\n");
+            Console.WriteLine(myNameUpperCase);
+            Console.WriteLine(myNameLowerCase);
+            Console.WriteLine(myNameTrimmed);
+            Console.WriteLine(myNameSubString);
 
-            Console.Read();
+            Console.ReadKey();
         }
     }
 }
