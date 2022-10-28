@@ -5,20 +5,22 @@ namespace CSharp
 {
     internal class Program
     {
-        // Constants as fields
-        const double PI = 3.14159265359;
-        const int weeks = 52, months = 12;
-
-        // Create a constant of type string with your birthday as its value
-        // Using Birthday Generator
-        const string birthday = "12.21.1996";
-        const string birthday2 = "09.15.1997";
-        const string birthday3 = "1997-03-17";
-
         static void Main(string[] args)
         {
-            Console.WriteLine("My birthday is always going to be: {0}", birthday);
-            Console.ReadKey();
+            WriteSomething();
+            WriteSomethingSpecific("I am an argument and called from a method.");
+            Console.Read();
+        }
+
+        // Access modifier (static) return type method name (parameter1, parameter2)
+        public static void WriteSomething()
+        {
+            Console.WriteLine("I am called from a method.");
+        }
+
+        public static void WriteSomethingSpecific(string myText)
+        {
+            Console.WriteLine(myText);
         }
     }
 }
