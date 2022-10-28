@@ -7,23 +7,44 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            Calculate();
-            Console.Read();
-        }
+            Console.WriteLine("Please enter a number!");
+            string userInput = Console.ReadLine();
 
-        public static void Calculate()
-        {
-            Console.WriteLine("Please enter the first number");
-            string number1Input = Console.ReadLine();
-            Console.WriteLine("Please enter the second number");
-            string number2Input = Console.ReadLine();
+            int num1 = 5;
+            int num2 = 0;
+            int result;
 
-            int num1 = int.Parse(number1Input);
-            int num2 = int.Parse(number2Input);
+            try
+            {
+                result = num1 / num2;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Can't devide by zero!");
+            }
 
-            int result = num1 + num2;
+            try
+            {
+                int userInputAsInt = int.Parse(userInput);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Format exception, please enter the correct type next time.");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("General exception, the number was too long or too short for an int32");
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("ArgumentNullException, the value was empty(null)");
+            }
+            finally
+            {
+                Console.WriteLine("This is called anyways!");
+            }
 
-            Console.WriteLine(result);
+            Console.ReadKey();
         }
     }
 }
