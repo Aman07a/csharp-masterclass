@@ -7,27 +7,37 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            string myString = "15";
-            string mySecondString = "13";
-            int num1 = Int32.Parse(myString);
-            int num2 = Int32.Parse(mySecondString);
-            int resultInt = num1 + num2;
-            string result = myString + mySecondString;
+            // Define few variables
+            int age = 22;
+            string name = "Admin";
+            string job = "Developer";
 
-            Console.WriteLine(resultInt);
+            // 1. String concatenation
+            Console.WriteLine("String concatenation");
+            Console.WriteLine("Hello my name is " + name + ", I am " + age + " years old.");
+
+            // 2. String formatting
+            // String formatting uses index
+            Console.WriteLine("String Formatting");
+            Console.WriteLine("Hello my name is {0}, I am {1} years old. I'm a {2}.", name, age, job);
+
+            // 3. String interpolation
+            // String interpolation uses $ at the start
+            // which will allow us to write our variables like this {variableName}
+            Console.WriteLine("String Interpolation");
+            Console.WriteLine($"Hello my name is {name}, I am {age} years old.");
+
+            // 4. Verbatim strings
+            // Verbatim strings start with @ and tells the compiler to take the string literally
+            // and ignore any spaces and escape characters like \n
+            Console.WriteLine("Verbatim strings");
+            Console.WriteLine(@"Lorem ipsum dolor sit amet, " +
+            "consectetur adipiscing elit,\n" +
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n" +
+            "Lacus laoreet non curabitur gravida arcu ac.\n" +
+            "Posuere lorem ipsum dolor sit amet consectetur adipiscing elit.\n");
+
             Console.Read();
-
-            // Example 1: Exercise: Parsing
-            /* string stringForFloat = "0.85"; // datatype should be float
-             * string stringForInt = "12345"; // datatype should be int
-             * float stringToFloat = float.Parse(stringForFloat);
-             * int stringToInt = int.Parse(stringForInt);
-             * 
-             * Console.WriteLine("Float = {0}, Int = {1}", stringToFloat, stringToInt);
-             * Console.WriteLine(stringToFloat);
-             * Console.WriteLine(stringToInt);
-             * Console.Read();
-             * */
         }
     }
 }
