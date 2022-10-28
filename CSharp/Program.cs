@@ -7,31 +7,20 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Add: " + Add(25, 13));
-            Console.WriteLine("Substract: " + Substract(25, 13));
-            Console.WriteLine("Multiply: " + Multiply(25, 13));
-            Console.WriteLine("Devide: " + Devide(25, 13));
+            string friend1 = "Abe";
+            string friend2 = "Jody";
+            string friend3 = "Cory";
+
+            GreetFriend(friend1, friend2, friend3);
+
             Console.Read();
         }
 
-        public static int Add(int num1, int num2)
+        public static void GreetFriend(string friendName, string friendName2, string friendName3)
         {
-            return num1 + num2;
-        }
-
-        public static int Substract(int num1, int num2)
-        {
-            return num1 - num2;
-        }
-
-        public static int Multiply(int num1, int num2)
-        {
-            return num1 * num2;
-        }
-
-        public static double Devide(double num1, double num2)
-        {
-            return num1 / num2;
+            Console.WriteLine("Hi " + friendName + ", my friend!");
+            Console.WriteLine("Hi " + friendName2 + ", my friend!");
+            Console.WriteLine("Hi " + friendName3 + ", my friend!");
         }
     }
 }
