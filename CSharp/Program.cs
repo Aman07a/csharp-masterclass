@@ -7,6 +7,9 @@ namespace CSharp
         // Starting point of our pogram
         static void Main(string[] args)
         {
+            // Console.ForegroundColor = ConsoleColor.DarkYellow;
+            // Console.BackgroundColor = ConsoleColor.DarkGray;
+            // Console.Clear();
             Console.WriteLine("Hello Admin");
             Console.WriteLine("C# is cool");
             Console.Read();
