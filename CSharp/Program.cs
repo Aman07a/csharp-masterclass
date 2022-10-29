@@ -9,31 +9,16 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            Run();
-        }
-
-        public static void ForLoop()
-        {
-            for (int i = -3; i < 4; i++)
+            for (int counter = 0; counter < 10; counter++)
             {
-                Console.WriteLine(i);
+                if (counter % 2 ==0)
+                {
+                    Console.WriteLine("Now comes an odd number");
+                    continue;
+                }
+                Console.WriteLine(counter);
             }
-        }
-
-        public static void WhileLoop()
-        {
-            int i = 3;
-            while (i > -4)
-            {
-                Console.WriteLine(i--);
-            }
-        }
-
-        public static void Run()
-        {
-            WhileLoop();
-            ForLoop();
-
+            Console.Read();
         }
     }
 }
