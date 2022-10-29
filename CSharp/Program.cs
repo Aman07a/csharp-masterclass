@@ -5,26 +5,35 @@ namespace CSharp
 {
     internal class Program
     {
+        public static void NestedCheck(int number)
+        {
+            if (number % 3 == 0)
+            {
+                Console.WriteLine("Divisible by 3: {0}.", number);
+            }
+            else if (number % 7 == 0)
+            {
+                Console.WriteLine("Divisible by 7: {0}.", number);
+            }
+            else
+            {
+                if (number % 2 != 0)
+                {
+                    Console.WriteLine("Odd number: {0}.", number);
+                } else
+                {
+                    Console.WriteLine("Even number: {0}.", number);
+                }
+            }
+        }
+
         public static void Main(string[] args)
         {
-            bool isAdmin = false;
-            bool isRegistered = true;
-            string userName = "";
+            Console.WriteLine("Choose a number?");
+            string inputNumber = Console.ReadLine();
+            int.TryParse(inputNumber, out int number);
 
-            Console.WriteLine("Please enter your username");
-            userName = Console.ReadLine();
-
-            if (isRegistered && userName != "" && userName.Equals("admin"))
-            {
-                Console.WriteLine("Hi there, registered user");
-                Console.WriteLine("Hi there, " + userName);
-                Console.WriteLine("Hi there, Admin");
-            }
-
-            if (isAdmin || isRegistered)
-            {
-                Console.WriteLine("You are logged in");
-            }
+            NestedCheck(number);
 
             Console.Read();
         }
