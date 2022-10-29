@@ -5,37 +5,47 @@ namespace CSharp
 {
     internal class Program
     {
-        public static void NestedCheck(int number)
-        {
-            if (number % 3 == 0)
-            {
-                Console.WriteLine("Divisible by 3: {0}.", number);
-            }
-            else if (number % 7 == 0)
-            {
-                Console.WriteLine("Divisible by 7: {0}.", number);
-            }
-            else
-            {
-                if (number % 2 != 0)
-                {
-                    Console.WriteLine("Odd number: {0}.", number);
-                } else
-                {
-                    Console.WriteLine("Even number: {0}.", number);
-                }
-            }
-        }
+        static string username;
+        static string password;
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Choose a number?");
-            string inputNumber = Console.ReadLine();
-            int.TryParse(inputNumber, out int number);
-
-            NestedCheck(number);
-
+            Register();
+            Login();
             Console.Read();
+        }
+
+        public static void Register()
+        {
+            Console.WriteLine("Please enter your username");
+            username = Console.ReadLine();
+
+            Console.WriteLine("Please enter your password");
+            password = Console.ReadLine();
+
+            Console.WriteLine("Registration completed");
+            Console.WriteLine("-----------------------------");
+        }
+
+        public static void Login()
+        {
+            Console.WriteLine("Please enter your username");
+            if (username == Console.ReadLine())
+            {
+                Console.WriteLine("Please enter your password");
+                if (password == Console.ReadLine())
+                {
+                    Console.WriteLine("Login successful");
+                }
+                else
+                {
+                    Console.WriteLine("Login failed, wrong password. Restart Program");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Login failed, wrong username. Restart Program");
+            }
         }
     }
 }
