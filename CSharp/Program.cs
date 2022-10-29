@@ -9,16 +9,28 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            for (int counter = 0; counter < 10; counter++)
+            Run();
+        }
+
+        public static void Run()
+        {
+            int i = -10;
+
+            while (true)
             {
-                if (counter % 2 ==0)
+                if (i % 3 == 0)
                 {
-                    Console.WriteLine("Now comes an odd number");
+                    i++;
                     continue;
                 }
-                Console.WriteLine(counter);
+                if (i == 10)
+                    break;
+                if (i % 6 == 0)
+                {
+                    break;
+                }
+                Console.WriteLine(i++);
             }
-            Console.Read();
         }
     }
 }
