@@ -5,55 +5,35 @@ namespace CSharp
 {
     internal class Program
     {
+        static int highscore = 340;
+        static string highscorePlayer = "Mark";
+
         public static void Main(string[] args)
         {
-            int age = 25;
+            CheckHighscore(200, "Timon");
+            CheckHighscore(350, "Anna");
+            CheckHighscore(375, "Benjamin");
+            CheckHighscore(335, "Lydia");
 
-            // Switch Statement
-            switch (age)
-            {
-                case 15:
-                    Console.WriteLine("Too youn to party in the club!");
-                    break;
-                case 25:
-                    Console.WriteLine("Good to go!");
-                    break;
-                default:
-                    Console.WriteLine("How old are you then?");
-                    break;
-            }
+            Console.Read();
+        }
 
-            // If Else Statement (age)
-            if (age == 15)
+        public static void CheckHighscore(int score, string playerName)
+        {
+            if (score > highscore)
             {
-                Console.WriteLine("Too youn to party in the club!");
-            }
-            else if (age == 25)
-            {
-                Console.WriteLine("Good to go!");
+                highscore = score;
+                highscorePlayer = playerName;
+
+                Console.WriteLine("New highscore is " + score);
+                Console.WriteLine("It is now held by " + playerName);
+
             }
             else
             {
-                Console.WriteLine("How old are you then?");
+                Console.WriteLine("The old highscore could not be broken. It is still "
+                    + highscore + " and held by " + highscorePlayer);
             }
-
-            string username = "admin";
-
-            // If Else Statement (username)
-            switch (username)
-            {
-                case "admin":
-                    Console.WriteLine("Username is Admin");
-                    break;
-                case "user":
-                    Console.WriteLine("Username is User");
-                    break;
-                default:
-                    Console.WriteLine("Username is unknown");
-                    break;
-            }
-
-            Console.Read();
         }
     }
 }
