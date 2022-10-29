@@ -5,39 +5,24 @@ namespace CSharp
 {
     internal class Program
     {
-        public static void Main(string[] args)
+        public static void Check(int number)
         {
-            Console.WriteLine("What's the temperature like?");
-            string temperature = Console.ReadLine();
-            int numTemp;
-            int number;
-            bool userEnteredANumber = int.TryParse(temperature, out number);
-
-            if (userEnteredANumber)
+            if (number % 2 == 0)
             {
-                numTemp = number;
-            } else
-            {
-                numTemp = 0;
-                Console.WriteLine("Value entered, was no number. {0} set as temperature.", numTemp);
-            }
-
-            if (numTemp < 20)
-            {
-                Console.WriteLine("Take the coat");
-            }
-            else if (numTemp == 20)
-            {
-                Console.WriteLine("Pants and Pull Over should be fine");
-            }
-            else if (numTemp > 30)
-            {
-                Console.WriteLine("It's super hot!");
+                Console.WriteLine("Even: {0}", number);
             }
             else
             {
-                Console.WriteLine("Shorts are enough today");
+                Console.WriteLine("Odd: {0}", number);
             }
+        }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Choose a number?");
+            string inputNumber = Console.ReadLine();
+            int.TryParse(inputNumber, out int number);
+            Check(number);
 
             Console.Read();
         }
