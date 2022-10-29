@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CSharp
 {
@@ -7,50 +9,41 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            // [condition] ? [first expression] : [second expression]
-            // Condition has to be either true or false
+            int inputTemperature = 0;
+            string temperatureMessage = string.Empty;
+            string inputValue = string.Empty;
 
-            // The conditional Operator is right-associative
-            // That means, that a ? b : c ? d : e
-            // Is evaluated as a ? b : (c ? d : e)
+            // Takes input from console
+            Console.WriteLine("Enter the current temperature: ");
+            inputValue = Console.ReadLine();
 
-            // The conditional Operator cannot be overloaded.
+            // Validate the input as valid input integer value
+            bool validInteger = int.TryParse(inputValue, out inputTemperature);
 
-            // In celcius
-            // Play around with that Value
-            int temperature = -5;
-
-            // Our result
-            string stateOfMatter;
-
-            // Is the Temperature below 0 Degree Celsius?
-            if (temperature < 0)
+            if (validInteger)
             {
-                stateOfMatter = "solid";
+                // If is valid integer then it will check for the conditions using nested ternary operator
+                temperatureMessage = inputTemperature <= 15 ?
+                // True
+                    "it is too cold here" :
+                // False
+                (inputTemperature >= 16 && inputTemperature <= 28) ?
+                // True
+                    "it is cold here" :
+                // False
+                inputTemperature > 28 ?
+                // True
+                    "it is hot here" :
+                // False
+                "";
+                Console.WriteLine(temperatureMessage);
             }
-            // Is the Temperature higher than 100 Degree Celcius?
-            else if (temperature > 100)
-            {
-                stateOfMatter = "gas";
-            }
-            // In all other Cases it must be liquid.
             else
             {
-                stateOfMatter = "liquid";
+                // In case if the input value is not a valid temperature
+                Console.WriteLine("Not a valid Temperature");
             }
-
-            Console.WriteLine("State of Matter is {0}", stateOfMatter);
-
-            temperature += 30;
-
-            // The same result can be achieved by this
-            // The enhanced Version of the If-Else-Statement from above
-            stateOfMatter = temperature > 100 ? "gas" : (temperature < 0 ? "solid" : "liquid");
-
-            Console.WriteLine("State of Matter is {0}", stateOfMatter);
-
-            // To make sure the Console keeps open
-            Console.Read();
+            Console.ReadKey();
         }
     }
 }
