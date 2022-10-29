@@ -5,35 +5,52 @@ namespace CSharp
 {
     internal class Program
     {
-        static int highscore = 340;
-        static string highscorePlayer = "Mark";
-
         public static void Main(string[] args)
         {
-            CheckHighscore(200, "Timon");
-            CheckHighscore(350, "Anna");
-            CheckHighscore(375, "Benjamin");
-            CheckHighscore(335, "Lydia");
+            // [condition] ? [first expression] : [second expression]
+            // Condition has to be either true or false
 
-            Console.Read();
-        }
+            // The conditional Operator is right-associative
+            // That means, that a ? b : c ? d : e
+            // Is evaluated as a ? b : (c ? d : e)
 
-        public static void CheckHighscore(int score, string playerName)
-        {
-            if (score > highscore)
+            // The conditional Operator cannot be overloaded.
+
+            // In celcius
+            // Play around with that Value
+            int temperature = -5;
+
+            // Our result
+            string stateOfMatter;
+
+            // Is the Temperature below 0 Degree Celsius?
+            if (temperature < 0)
             {
-                highscore = score;
-                highscorePlayer = playerName;
-
-                Console.WriteLine("New highscore is " + score);
-                Console.WriteLine("It is now held by " + playerName);
-
+                stateOfMatter = "solid";
             }
+            // Is the Temperature higher than 100 Degree Celcius?
+            else if (temperature > 100)
+            {
+                stateOfMatter = "gas";
+            }
+            // In all other Cases it must be liquid.
             else
             {
-                Console.WriteLine("The old highscore could not be broken. It is still "
-                    + highscore + " and held by " + highscorePlayer);
+                stateOfMatter = "liquid";
             }
+
+            Console.WriteLine("State of Matter is {0}", stateOfMatter);
+
+            temperature += 30;
+
+            // The same result can be achieved by this
+            // The enhanced Version of the If-Else-Statement from above
+            stateOfMatter = temperature > 100 ? "gas" : (temperature < 0 ? "solid" : "liquid");
+
+            Console.WriteLine("State of Matter is {0}", stateOfMatter);
+
+            // To make sure the Console keeps open
+            Console.Read();
         }
     }
 }
