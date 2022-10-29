@@ -9,19 +9,31 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            int counter = 0;
-            string enteredText = "";
-            while(enteredText.Equals(""))
-            {
-                Console.WriteLine("Please enter to increase amount by one and anything else" + 
-                    " + enter if you want to finish counting");
-                enteredText = Console.ReadLine();
+            Run();
+        }
 
-                counter++;
-                Console.WriteLine("Current people count is {0}", counter);
+        public static void ForLoop()
+        {
+            for (int i = -3; i < 4; i++)
+            {
+                Console.WriteLine(i);
             }
-            Console.WriteLine("{0} people are inside the bus. Press enter to close the program", counter);
-            Console.Read();
+        }
+
+        public static void WhileLoop()
+        {
+            int i = 3;
+            while (i > -4)
+            {
+                Console.WriteLine(i--);
+            }
+        }
+
+        public static void Run()
+        {
+            WhileLoop();
+            ForLoop();
+
         }
     }
 }
