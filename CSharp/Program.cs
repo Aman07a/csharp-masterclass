@@ -7,68 +7,28 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            int num1 = 5;
-            int num2 = 3;
-            int num3;
+            Console.WriteLine("What's the temperature like?");
+            string temperature = Console.ReadLine();
+            int numTemp = int.Parse(temperature);
 
-            // Unary operators
-            num3 = -num1;
-            Console.WriteLine("num3 is {0}", num3);
+            if (numTemp < 20)
+            {
+                Console.WriteLine("Take the coat");
+            }
+            else if (numTemp == 20)
+            {
+                Console.WriteLine("Pants and Pull Over should be fine");
+            }
+            else if (numTemp > 30)
+            {
+                Console.WriteLine("It's super hot!");
+            }
+            else
+            {
+                Console.WriteLine("Shorts are enough today");
+            }
 
-            bool isSunny = true;
-            Console.WriteLine("is it sunny? {0}", !isSunny);
-
-            // Increment operators
-            int num = 0;
-            num++;
-            Console.WriteLine("num is {0}", num);
-            Console.WriteLine("num is {0}", num++);
-            // Pre increment
-            Console.WriteLine("num is {0}", ++num);
-
-            // Decrement opertor
-            num--;
-            Console.WriteLine("num is {0}", num);
-            Console.WriteLine("num is {0}", num--);
-            // Pre decrement
-            Console.WriteLine("num is {0}", --num);
-
-            int result;
-
-            result = num1 + num2;
-            Console.WriteLine("result of num1 + num2 is {0}", result);
-            result = num1 - num2;
-            Console.WriteLine("result of num1 - num2 is {0}", result);
-            result = num1 / num2;
-            Console.WriteLine("result of num1 / num2 is {0}", result);
-            result = num1 * num2;
-            Console.WriteLine("result of num1 * num2 is {0}", result);
-            result = num1 % num2;
-            Console.WriteLine("result of num1 % num2 is {0}", result);
-
-            // Relational and type operators
-            bool isLower;
-            isLower = num1 < num2;
-            Console.WriteLine("result of num1 < num2 is {0}", isLower);
-
-            // Equality operator
-            bool isEqual;
-            isEqual = num1 == num2;
-            Console.WriteLine("result of num1 == num2 is {0}", isEqual);
-
-            isEqual = num1 != num2;
-            Console.WriteLine("result of num1 != num2 is {0}", isEqual);
-
-            // Conditional operators
-            bool isLowerAndSunny;
-            // Condition1 AND condition2
-            isLowerAndSunny = isLower && isSunny;
-            Console.WriteLine("result of isLower && isSunny is {0}", isLowerAndSunny);
-
-            // Condition1 OR condition2
-            isLowerAndSunny = isLower || isSunny;
-            Console.WriteLine("result of isLower || isSunny is {0}", isLowerAndSunny);
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }
