@@ -9,6 +9,7 @@ namespace CSharp
     internal class Box
     {
         // Member variables
+        private string color = "white";
         private int length = 3;
         private int height;
         // public int width;
@@ -16,34 +17,34 @@ namespace CSharp
 
         public int Width { get; set; }
 
+        public Box(int length, int height, int width)
+        {
+            this.length = length;
+            this.height = height;
+            this.Width = width;
+        }
+
         public int Volume
         {
             get
             {
-                return this.length * this.Height * this.Width;
+                return Height * Width * Length;
+            }
+            set
+            {
+                volume = value;
             }
 
         }
 
-        /*
-        public int Width
-        {
-            get
-            {
-                return this.width;
-            }
-            set
-            {
-                this.width = value;
-            }
-        }*/
-
+        // Read only
         public int Height
         {
             get
             {
                 return height;
             }
+            /*
             set
             {
                 if (value < 0)
@@ -55,15 +56,29 @@ namespace CSharp
                     height = value;
                 }
             }
+            */
         }
 
-        public Box(int length, int height, int width)
+        public int Length
         {
-            this.length = length;
-            this.height = height;
-            Width = width;
+            get => length;
+            set => length = value;
         }
 
+        /*
+        public int Length
+        {
+            get
+            {
+                return this.length;
+            }
+            set
+            {
+                this.length = value;
+            }
+        }
+        */
+        /*
         public void SetLength(int length)
         {
             if (length < 0)
@@ -77,11 +92,17 @@ namespace CSharp
         {
             return this.length;
         }
+        */
+
+        public int FrontSurface
+        {
+            get { return height * length; }
+        }
 
         public void DisplayInfo()
         {
             Console.WriteLine("Length is {0} and height is {1} and width is {2} and volume is {3}",
-                length, height, Width, volume = length * height * Width);
+                length, height, Width, volume = Width * height * length);
         }
     }
 }

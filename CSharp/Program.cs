@@ -11,12 +11,10 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            Box box = new Box(3, 4,5);
+            Box box = new Box(5, 4, 10);
 
-            Console.WriteLine("Old Box width is " + box.Width);
-            box.Width = 10;
-            Console.WriteLine("New Box width is " + box.Width);
-            Console.WriteLine("Box volume is " + box.Volume);
+            Console.WriteLine("Volume is {0}", box.Volume);
+            Console.WriteLine("Front surface of the box is {0}", box.FrontSurface);
 
             box.DisplayInfo();
 
