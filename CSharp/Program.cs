@@ -9,57 +9,27 @@ namespace CSharp
 {
     internal class Program
     {
+        static int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
         public static void Main(string[] args)
         {
-            // Declare and initialize a 2-dimensional Array
-            int[,] array2D = new int[,] { { 11, 12, 13 }, { 21, 22, 23 }, { 31, 32, 33 } };
-
-            // We access the Value 23
-            // Nore, that Indexes start with 0
-            Console.WriteLine(array2D[1, 2]);
-
-            // 3-Dimensions are more complex, but the concept is the same
-            string[,,] array3D = new string[,,]
+            foreach (int item in matrix)
             {
+                Console.WriteLine(item + " ");
+            }
+
+            Console.WriteLine("\n This is our 2D array printed using nested for loop");
+
+            // Nested for loop
+            // Outer for loop
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                // Inner for loop
+                for (int j = 0; j < matrix.GetLength(0); j++)
                 {
-                    { "000", "001", "002" },
-                    { "010", "011", "012" },
-                    { "020", "021", "022" }
-                },
-                {
-                    { "100", "101", "102" },
-                    { "110", "111", "112" },
-                    { "120", "121", "122" }
-                },
-                {
-                    { "200", "201", "202" },
-                    { "210", "211", "212" },
-                    { "220", "221", "222" }
-                },
-                {
-                    { "Hi", "I", "am" },
-                    { "also", "part", "of" },
-                    { "the", "3-dimensional", "array" }
+                    Console.WriteLine(matrix[i, j] + " ");
                 }
-            };
-
-            // We access the Value "201"
-            Console.WriteLine(array3D[2, 0, 1]);
-
-            // Hi
-            Console.WriteLine(array3D[3, 0, 0]);
-
-            // Will give us the Dimension of the corresponding Array
-            int amountDimensions = array3D.Rank;
-            Console.WriteLine("The Dimension is {0}", amountDimensions);
-
-            // Multi-dimensional Arrays can also be created that way:
-            string[,] arr2D = { { "00", "01" } };
-
-            Console.WriteLine(arr2D[0, 0]);
-
-            // To keep the Console open
-            Console.Read();
+            }
         }
     }
 }
