@@ -11,32 +11,41 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            /*int[] nums = new int[10];
+            Run();
+        }
 
-            for (int i = 0; i < 10; i++)
+        public static void GetOdd(int[] Array)
+        {
+            // TODO
+            for (int i = 0; i < Array.Length; i++)
             {
-                nums[i] = i + 10;
+                if (Array[i] % 2 !=0)
+                {
+                    Console.WriteLine(Array[i]);
+                }
             }
+        }
 
-            for (int j = 0; j < nums.Length; j++)
+        public static void GetEven(int[] Array)
+        {
+            // TODO
+            foreach (int value in Array)
             {
-                Console.WriteLine("Element {0} = {1}", j, nums[j]);
+                if (value % 2 == 0)
+                {
+                    Console.WriteLine(value);
+                }
             }
+        }
 
-            int counter = 0;
-            foreach (int k in nums)
-            {
-                Console.WriteLine("Element {0} = {1}", counter, k); counter++;
-            }*/
+        public static void Run()
+        {
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            string[] myFriends = { "Michael", "Wlad", "Ilja", "Andy", "Daniel" };
+            GetOdd(array);
+            Console.WriteLine("---------");
+            GetEven(array);
 
-            foreach (string name in myFriends)
-            {
-                Console.WriteLine("Hi there {0}, my friend.", name);
-            }
-
-            Console.ReadKey();
         }
     }
 }
