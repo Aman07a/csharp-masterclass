@@ -11,77 +11,55 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            Boolean valid = false;
-            string inputValueType;
+            // Declare and initialize a 2-dimensional Array
+            int[,] array2D = new int[,] { { 11, 12, 13 }, { 21, 22, 23 }, { 31, 32, 33 } };
 
-            Console.WriteLine("Enter a value: ");
-            string inputValue = Console.ReadLine();
+            // We access the Value 23
+            // Nore, that Indexes start with 0
+            Console.WriteLine(array2D[1, 2]);
 
-            Console.WriteLine("Select the Data type to validate the input you have entered");
-            Console.WriteLine("Press 1 for String");
-            Console.WriteLine("Press 2 for Integer");
-            Console.WriteLine("Press 3 for Boolean");
-
-            Console.WriteLine("Enter: ");
-            int inputType = Convert.ToInt32(Console.ReadLine());
-
-            switch (inputType)
+            // 3-Dimensions are more complex, but the concept is the same
+            string[,,] array3D = new string[,,]
             {
-                case 1:
-                    // Check for string
-                    valid = IsAllAlphabetic(inputValue);
-                    inputValueType = "String";
-                    break;
-                case 2:
-                    int redValue = 0;
-                    // Check for integer
-                    valid = int.TryParse(inputValue, out redValue);
-                    inputValueType = "Integer";
-                    break;
-                case 3:
-                    bool redFlag = false;
-                    // Check for boolean
-                    valid = bool.TryParse(inputValue, out redFlag);
-                    inputValueType = "Boolean";
-                    break;
-                default:
-                    inputValueType = "Unknown";
-                    Console.WriteLine("Not able to detect the input type, something is wrong");
-                    break;
-            }
-
-            Console.WriteLine("You have entered a value: {0}", inputValue);
-
-            if(valid)
-            {
-                Console.WriteLine("It is valid: {0}", inputValueType);
-            } else
-            {
-                Console.WriteLine("It is invalid: {0}", inputValueType);
-            }
-
-            Console.ReadKey();
-        }
-
-        /// <summary>
-        /// Function to check if the input string is valid string.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        ///
-        // H3LLO W0RLD
-
-        static bool IsAllAlphabetic(string value)
-        {
-            foreach (char c in value)
-            {
-                if (!char.IsLetter(c))
                 {
-                    return false;
+                    { "000", "001", "002" },
+                    { "010", "011", "012" },
+                    { "020", "021", "022" }
+                },
+                {
+                    { "100", "101", "102" },
+                    { "110", "111", "112" },
+                    { "120", "121", "122" }
+                },
+                {
+                    { "200", "201", "202" },
+                    { "210", "211", "212" },
+                    { "220", "221", "222" }
+                },
+                {
+                    { "Hi", "I", "am" },
+                    { "also", "part", "of" },
+                    { "the", "3-dimensional", "array" }
                 }
-            }
-            return true;
+            };
+
+            // We access the Value "201"
+            Console.WriteLine(array3D[2, 0, 1]);
+
+            // Hi
+            Console.WriteLine(array3D[3, 0, 0]);
+
+            // Will give us the Dimension of the corresponding Array
+            int amountDimensions = array3D.Rank;
+            Console.WriteLine("The Dimension is {0}", amountDimensions);
+
+            // Multi-dimensional Arrays can also be created that way:
+            string[,] arr2D = { { "00", "01" } };
+
+            Console.WriteLine(arr2D[0, 0]);
+
+            // To keep the Console open
+            Console.Read();
         }
     }
-
 }
