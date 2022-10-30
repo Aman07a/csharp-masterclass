@@ -9,10 +9,11 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            Human sissy = new Human("Sissy", "Wagner");
-            sissy.IntroduceMyself();
-
-            Console.ReadKey();
+            Human denis = new Human(29, "Denis", "Panjuta", "green");
+            Human james = new Human(25, "James", "Bond", "blue");
+            denis.IntroduceOnceself();
+            james.IntroduceOnceself();
+            Console.Read();
         }
     }
 }

@@ -6,30 +6,28 @@ using System.Threading.Tasks;
 
 namespace CSharp
 {
-    // This class is a blueprint for a datatype 
-
-    // Create a public variable lastName of type string.
-    // Change the IntroduceMyself method, so it tells the whole name.
-    // Create two objects with full information about themself - firstName and lastName
-
-    internal class Human
+    class Human
     {
-        // Member variable
-        public string firstName;
-        public string lastName;
+        // Member variables
+        private int age;
+        private string firstName;
+        private string lastName;
+        private string eyeColor;
+        private bool isHuman = true;
 
         // Constructor
-        public Human(string myFirstName, string lastName)
+        public Human(int age, string firstName, string lastName, string eyeColor)
         {
-            firstName = myFirstName;
+            this.age = age;
+            this.firstName = firstName;
             this.lastName = lastName;
-
+            this.eyeColor = eyeColor;
         }
 
         // Member method
-        public void IntroduceMyself()
+        public void IntroduceOnceself()
         {
-            Console.WriteLine("Hi, I'm {0} {1}", firstName, lastName);
+            Console.WriteLine("Hi, I'm {0} {1} {2}", firstName, lastName, eyeColor);
         }
     }
 }
