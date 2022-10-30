@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Numerics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
@@ -9,25 +11,55 @@ namespace CSharp
     {
         public static void Main(string[] args)
         {
-            Human denis = new Human("Denis", "Panjuta", "green", 29);
-            denis.IntroduceMyself();
+            Run.RunExercise();
+        }
 
-            Human amalia = new Human("Amalia", "Panjuta", "blue");
-            amalia.IntroduceMyself();
+        public class Phone
+        {
+            public string Company;
+            public string Model;
+            public string ReleaseDay;
 
-            Human basicHuman = new Human();
-            basicHuman.IntroduceMyself();
+            // Place for your constructors
+            public Phone()
+            {
+                Company = "unknown";
+                Model = "unknown";
+                ReleaseDay = "unknown";
+            }
 
-            Human natalie = new Human("Natalie");
-            natalie.IntroduceMyself();
+            public Phone(string company, string model)
+            {
+                Company = company;
+                Model = model;
+                ReleaseDay = "unknown";
+            }
 
-            Human michael = new Human("Michael", "Miller");
-            michael.IntroduceMyself();
+            public Phone(string company, string model, string releaseDay)
+            {
+                Company = company;
+                Model = model;
+                ReleaseDay = releaseDay;
+            }
 
-            Human frank = new Human("Frank", "Walter", 25);
-            frank.IntroduceMyself();
+            public void Introduce()
+            {
+                Console.WriteLine("It is {0} created by {1}. It was released {2}.", Model, Company, ReleaseDay);
+            }
+        }
 
-            Console.ReadKey();
+        public class Run
+        {
+            public static void RunExercise()
+            {
+                Phone one = new Phone();
+                Phone two = new Phone("Apple", "IPhone 12");
+                Phone three = new Phone("Apple", "IPhone 12", "September 24, 2021");
+
+                one.Introduce();
+                two.Introduce();
+                three.Introduce();
+            }
         }
     }
 }
