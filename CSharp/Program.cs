@@ -13,11 +13,7 @@ namespace CSharp
 
         public static void Main(string[] args)
         {
-            foreach (int item in matrix)
-            {
-                Console.WriteLine(item + " ");
-            }
-
+            /*
             Console.WriteLine("\n This is our 2D array printed using nested for loop");
 
             // Nested for loop
@@ -27,9 +23,18 @@ namespace CSharp
                 // Inner for loop
                 for (int j = 0; j < matrix.GetLength(0); j++)
                 {
-                    Console.WriteLine(matrix[i, j] + " ");
+                    if (i == j)
+                        matrix[i, j] = 1;
+                    else
+                        Console.WriteLine(" ");
                 }
+                Console.WriteLine("");
             }
+
+            foreach (int item in matrix)
+            {
+                Console.WriteLine(item + " ");
+            }*/
         }
     }
 }
